@@ -56,7 +56,8 @@ import matplotlib.pyplot as plt
 
 # 2. Load the Dataset
 dataset = pd.read_csv("Placement_Data.csv")
-dataset
+print("\n--- Step 1: Original Dataset ---\n")
+print(dataset.head())
 
 # 3. Drop Irrelevant Columns
 dataset = dataset.drop('sl_no', axis=1)
@@ -71,7 +72,9 @@ dataset["workex"] = dataset["workex"].astype('category')
 dataset["specialisation"] = dataset["specialisation"].astype('category')
 dataset["status"] = dataset["status"].astype('category')
 dataset["hsc_s"] = dataset["hsc_s"].astype('category')
-dataset.dtypes
+
+print("\n--- Step 2: Dataset Data Types ---\n")
+print(dataset.dtypes)
 
 # 5. Encode Categorical Data into Numerical Codes
 dataset["gender"] = dataset["gender"].cat.codes
@@ -82,12 +85,16 @@ dataset["workex"] = dataset["workex"].cat.codes
 dataset["specialisation"] = dataset["specialisation"].cat.codes
 dataset["status"] = dataset["status"].cat.codes
 dataset["hsc_s"] = dataset["hsc_s"].cat.codes
-dataset
+
+print("\n--- Step 3: Encoded Dataset ---\n")
+print(dataset.head())
 
 # 6. Define Features (X) and Target (Y)
 X = dataset.iloc[:, :-1].values
 Y = dataset.iloc[:, -1].values
-Y
+
+print("\n--- Step 4: Target Variable (Y) ---\n")
+print(Y)
 
 # 7. Initialize Parameters
 theta = np.random.randn(X.shape[1])
@@ -123,40 +130,65 @@ def predict(theta, X):
 # 13. Make Predictions on Training Data
 y_pred = predict(theta, X)
 
+print("\n--- Step 5: Predicted Values (y_pred) ---\n")
+print(y_pred)
+
 # 14. Calculate Model Accuracy
 accuracy = np.mean(y_pred.flatten() == y)
+print("\n--- Step 6: Model Accuracy ---\n")
 print("Accuracy:", accuracy)
 
-print(y_pred)
+print("\n--- Step 7: Actual Target Values (Y) ---\n")
 print(Y)
 
 # 15. Test with New Data
 xnew = np.array([[0,87,0,95,0,2,78,2,0,0,1,0]])
 y_prednew = predict(theta, xnew)
+print("\n--- Step 8: Prediction for New Input 1 ---\n")
 print(y_prednew)
 
 xnew = np.array([[0,0,0,0,0,2,8,2,0,0,1,0]])
 y_prednew = predict(theta, xnew)
+print("\n--- Step 9: Prediction for New Input 2 ---\n")
 print(y_prednew)
+
 ```
 ## Output:
-Step 1: Dataset
+Step 1: Original Dataset
 
-Step 2: Dataset dtypes
+![alt text](<Screenshot 2025-09-25 141318.png>)
+
+Step 2: Dataset Data Types
+
+![alt text](<Screenshot 2025-09-25 141324.png>)
 
 Step 3: Encoded Dataset
 
+![alt text](<Screenshot 2025-09-25 141331.png>)
+
 Step 4: Target Variable (Y)
 
-Step 5: Model Accuracy
+![alt text](<Screenshot 2025-09-25 141337.png>)
 
-Step 6: Predicted Y Values (y_pred)
+Step 5: Predicted Values (y_pred)
 
-Step 7: Actual Y Values
+![alt text](<Screenshot 2025-09-25 142144.png>)
+
+Step 6: Model Accuracy
+
+![alt text](<Screenshot 2025-09-25 141348.png>)
+
+Step 7: Actual Target Values (Y)
+
+![alt text](<Screenshot 2025-09-25 141355.png>)
 
 Step 8: Prediction for New Input 1
 
+![alt text](<Screenshot 2025-09-25 141400.png>)
+
 Step 9: Prediction for New Input 2
+
+![alt text](<Screenshot 2025-09-25 141406.png>)
 
 ## Result:
 

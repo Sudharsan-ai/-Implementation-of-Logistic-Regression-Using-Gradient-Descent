@@ -1,15 +1,15 @@
-Implementation-of-Logistic-Regression-Using-Gradient-Descent
-AIM:
+## Implementation-of-Logistic-Regression-Using-Gradient-Descent
+## AIM:
 
 To write a program to implement Logistic Regression Using Gradient Descent.
 
-Equipments Required:
+## Equipments Required:
 
 Hardware – PCs
 
 Anaconda – Python 3.7 Installation / Jupyter Notebook
 
-Algorithm:
+## Algorithm:
 
 Import the required libraries.
 
@@ -41,7 +41,8 @@ Calculate model accuracy.
 
 Test with new data.
 
-Program:
+## Program:
+```
 """
 Program to implement Logistic Regression Using Gradient Descent.
 Developed by: SUDHARSAN S
@@ -137,8 +138,8 @@ print(y_prednew)
 xnew = np.array([[0,0,0,0,0,2,8,2,0,0,1,0]])
 y_prednew = predict(theta, xnew)
 print(y_prednew)
-
-Output:
+```
+## Output:
 Step 1: Dataset
 
 Step 2: Dataset dtypes
@@ -157,6 +158,6 @@ Step 8: Prediction for New Input 1
 
 Step 9: Prediction for New Input 2
 
-Result:
+## Result:
 
 Thus, the program to implement Logistic Regression Using Gradient Descent is written and verified using Python programming.
